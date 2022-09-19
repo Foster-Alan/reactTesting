@@ -5,7 +5,7 @@ import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 
 describe('Teste PokemonDetails />', () => {
-  test('Informações detalhadas funciona corretamente', () => {
+  it('Informações detalhadas funciona corretamente', () => {
     renderWithRouter(<App />);
     const moreDetails = screen.getByText(/More details/i);
     userEvent.click(moreDetails);
@@ -18,7 +18,7 @@ describe('Teste PokemonDetails />', () => {
     expect(summaryContent).toHaveLength(1);
   });
 
-  test('Se o Game locations of <name> funciona corretamente', () => {
+  it('Se o Game locations of <name> funciona corretamente', () => {
     renderWithRouter(<App />);
     const moreDetails = screen.getByText(/More details/i);
     userEvent.click(moreDetails);
@@ -35,10 +35,11 @@ describe('Teste PokemonDetails />', () => {
       .getByText(/electricity/i);
     expect(pikachu).toBeInTheDocument();
 
-    const textoLocation = screen.getByText(/Kanto Viridian Forest/i);
-    expect(textoLocation).toBeInTheDocument();
+    const textLocation = screen.getByText(/Kanto Viridian Forest/i);
+    expect(textLocation).toBeInTheDocument();
   });
-  test('É exibido na tela uma label com o texto Pokémon favoritado?', () => {
+
+  it('É exibido na tela uma label com o texto Pokémon favoritado?', () => {
     renderWithRouter(<App />);
 
     const moreLink = screen.getByRole('link', { name: 'More details' });

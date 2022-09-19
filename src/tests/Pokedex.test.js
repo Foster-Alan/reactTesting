@@ -5,7 +5,7 @@ import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 
 describe('Test Pokedex', () => {
-  test('Os botões de filtragem por tipo possuem o nome correto', () => {
+  it('Os botões de filtragem por tipo possuem o nome correto', () => {
     renderWithRouter(<App />);
 
     const electricButton = screen.getByRole('button', { name: /Electric/i });
@@ -13,7 +13,7 @@ describe('Test Pokedex', () => {
     userEvent.click(electricButton);
   });
 
-  test('Os botões de filtragem por tipo possuem o data-testid correto', () => {
+  it('Os botões de filtragem por tipo possuem o data-testid correto', () => {
     renderWithRouter(<App />);
 
     const filterButtons = screen.getAllByTestId('pokemon-type-button');
@@ -21,7 +21,7 @@ describe('Test Pokedex', () => {
     expect(filterButtons).toHaveLength(pokemonTypes);
   });
 
-  test('É possível clicar no botão de filtragem All', () => {
+  it('É possível clicar no botão de filtragem All', () => {
     renderWithRouter(<App />);
 
     const all = screen.getByRole('button', { name: 'All' });

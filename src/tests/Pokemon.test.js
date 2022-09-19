@@ -8,7 +8,7 @@ import pokemons from '../data';
 describe('Teste Pokemon', () => {
   const idPokemonName = 'pokemon-name';
 
-  test('imagem do pokemon é mostrado corretamente', () => {
+  it('imagem do pokemon é mostrado corretamente', () => {
     renderWithRouter(<App />);
 
     const pokemonName = screen.getByTestId(idPokemonName).textContent;
@@ -19,7 +19,7 @@ describe('Teste Pokemon', () => {
     expect(imgPokemon).toHaveAttribute('src', `${objPokemon.image}`);
   });
 
-  test('imagem do pokemon possui o alt correto', () => {
+  it('imagem do pokemon possui o alt correto', () => {
     renderWithRouter(<App />);
 
     const pokemonName = screen.getByTestId(idPokemonName).textContent;
@@ -27,7 +27,7 @@ describe('Teste Pokemon', () => {
     expect(imgPokemon).toBeInTheDocument();
   });
 
-  test('Pokemon está favoritado corretamente', () => {
+  it('Pokemon está favoritado corretamente', () => {
     renderWithRouter(<App />);
 
     const moreDetails = screen.getByRole('link', { name: /More details/i });
@@ -53,7 +53,7 @@ describe('Teste Pokemon', () => {
     expect(markedFavorite2).toHaveAttribute('src', '/star-icon.svg');
   });
 
-  test('Tipo do pokemon é mostrado', () => {
+  it('Tipo do pokemon é mostrado', () => {
     renderWithRouter(<App />);
 
     const pokemonName = screen.getByTestId(idPokemonName).textContent;
